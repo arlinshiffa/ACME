@@ -9,6 +9,7 @@ export default function Input({
   title, id, type, placeholder, maxlength, minlength, message,
 }) {
   const [value, setValue] = useState();
+  const [count, setCount] = useState(0);
   return (
     <div className={styles.input}>
       <label className={styles.input__label} htmlFor={id}>
@@ -18,7 +19,8 @@ export default function Input({
       && (
       <span className={styles.input__maxlength}>
         {' '}
-        0/
+        {count}
+        /
         {maxlength}
       </span>
       )}
@@ -53,7 +55,7 @@ export default function Input({
       </div>
       )}
 
-      {type != 'phonenumber' && <input type={type} id={id} maxLength={maxlength} minLength={minlength} name={id} placeholder={placeholder} />}
+      {type != 'phonenumber' && <input onChange={(e) => setCount(e.target.value.length)} type={type} id={id} maxLength={maxlength} minLength={minlength} name={id} placeholder={placeholder} />}
 
       <div className={styles.input__help}>{message}</div>
     </div>
