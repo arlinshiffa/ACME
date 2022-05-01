@@ -1,0 +1,32 @@
+.card{
+    @apply bg-white text-left  rounded-xl  overflow-hidden border-x border-y border-green font-work-sans;
+    &__image{
+        @apply w-full h-[155px] relative bg-custom bg-cover bg-no-repeat;
+    }
+
+    &__title{
+        @apply font-bold mt-3 block;
+    }
+
+    &__detail{
+        @apply p-4 pt-2;
+    }
+
+    &__date{
+        @apply flex mt-4 ;
+
+        span{
+
+            &:nth-child(2){
+                @apply ml-2 text-sm;
+            }
+            
+            &:last-child{
+                @apply justify-self-end;
+
+                margin-left: auto!important;
+            }
+        }
+    }
+    
+}

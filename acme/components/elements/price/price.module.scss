@@ -1,0 +1,11 @@
+.price{
+    @apply text-sm font-work-sans text-green font-normal;
+
+    &.red{
+        @apply text-red font-bold; 
+    }
+
+    &.crossed{
+        @apply line-through;
+    }
+}
