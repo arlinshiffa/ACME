@@ -12,10 +12,9 @@ import styles2 from '../../elements/input/input.module.scss';
 export default function Form() {
   const validationSchema = Yup.object().shape({
     name: Yup.string().min(3, 'Nama terlalu pendek').max(50, 'Nama terlalu panjang'),
-    number: Yup.number().max(16, 'Nomor telepon tidak valid').nullable()
-      .transform((v, o) => (o === '' ? null : v), 'Nomor telepon tidak valid')
-      .required('Nomor telepon tidak valid'),
-    password: Yup.string().max(16).min(8).matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/),
+    number: Yup.string().max(16, 'Nomor tidak valid').required('Nomor tidak valid'),
+    password: Yup.string().max(16).min(8)
+      .matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/),
   });
 
   const formOptions = { resolver: yupResolver(validationSchema) };
@@ -28,7 +27,8 @@ export default function Form() {
 
   function onSubmit(data) {
     // display form data on success
-    alert(`SUCCESS!! :-)\n\n${JSON.stringify(data, null, 4)}`);
+
+    document.getElementById('submit').style.opacity = '1';
     return false;
   }
 
@@ -37,10 +37,11 @@ export default function Form() {
   const [value, setValue] = useState();
   const [count2, setCount2] = useState(0);
   let nameError = '';
-  let numberError = 'Kata sandi harus mengandung 8-16 karakter kombinasi huruf besar, huruf kecil, dan angka';
+  let numberError = 'Pilih kode negara, diikuti dengan nomor HPmu';
 
   nameError = errors.name?.message;
-  numberError = errors.number?.message;
+  if (errors.number?.message != undefined) numberError = errors.number?.message;
+
   if (count1 > 50) { nameError = 'Nama terlalu panjang'; }
 
   return (
@@ -95,7 +96,7 @@ export default function Form() {
               defaultCountry="ID"
             />
           </div>
-          <div className={`${styles2.input__help} ${errors.password ? styles2.input__help__red : ''} ${count2 > 18 ? styles2.input__red : ''} `}>{numberError}</div>
+          <div className={`${styles2.input__help} ${errors.number ? styles2.input__help__red : ''} ${count2 > 18 ? styles2.input__red : ''} `}>{numberError}</div>
         </div>
       </div>
 
