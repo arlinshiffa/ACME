@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.8.8",
     "next": "12.1.5",
     "prop-types": "^15.8.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-phone-number-input": "^3.1.52"
+    "react-hook-form": "^7.30.0",
+    "react-phone-number-input": "^3.1.52",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.5",

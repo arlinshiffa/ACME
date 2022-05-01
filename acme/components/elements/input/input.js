@@ -2,11 +2,10 @@ import PropTypes from 'prop-types';
 import 'react-phone-number-input/style.css';
 import PhoneInput, { getCountries, getCountryCallingCode } from 'react-phone-number-input/input';
 import { useState } from 'react';
-import en from 'react-phone-number-input/locale/en.json';
 import styles from './input.module.scss';
 
 export default function Input({
-  title, id, type, placeholder, maxlength, minlength, message,
+  title, id, type, placeholder, maxlength, minlength, message, register,
 }) {
   const [value, setValue] = useState();
   const [count, setCount] = useState(0);
@@ -55,7 +54,7 @@ export default function Input({
       </div>
       )}
 
-      {type != 'phonenumber' && <input onChange={(e) => setCount(e.target.value.length)} type={type} id={id} maxLength={maxlength} minLength={minlength} name={id} placeholder={placeholder} />}
+      {type != 'phonenumber' && <input {...register} onChange={(e) => setCount(e.target.value.length)} type={type} id={id} maxLength={maxlength} minLength={minlength} name={id} placeholder={placeholder} />}
 
       <div className={styles.input__help}>{message}</div>
     </div>

@@ -4,12 +4,18 @@
     @apply block w-full p-4 capitalize rounded-xl border-x border-y border-green;
   }
 
+ 
+
   &__label {
     @apply text-green inline-block text-sm ml-[4px] font-medium mb-[5px];
   }
 
   &__help {
     @apply text-grey text-sm mt-[11px] ml-[4px];
+
+    &__red {
+      @apply text-red;
+    }
   }
 
   &__maxlength {
@@ -27,8 +33,10 @@
 
     &__code {
       @apply h-[24px] text-grey rounded-xl rounded-r-none border-grey px-4 w-[93px] border-r;
-
-      
     }
+  }
+
+  &__red {
+    @apply text-red;
   }
 }
