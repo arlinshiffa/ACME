@@ -13,6 +13,7 @@ export default function Card() {
         <span className={styles.card__title}>Jasa Perancangan Website e-Commerce</span>
         <span>mulai dari </span>
         <Price price="6.000.000" type="crossed" />
+        {' '}
         <Price price="1.000.000" type="red" />
         <div className={styles.card__date}>
           <ClockIcon />

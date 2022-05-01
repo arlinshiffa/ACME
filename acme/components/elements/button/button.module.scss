@@ -1,0 +1,7 @@
+.button{
+    @apply text-center text-sm font-medium font-work-sans bg-green text-white w-full py-4 rounded-xl border-x border-y relative border-darkgreen;
+    
+    &::after{
+        @apply content-[''] w-full h-full bg-darkgreen rounded-xl -z-[1] absolute top-2 block border-x border-y border-darkgreen;
+    }
+}

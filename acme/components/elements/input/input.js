@@ -37,6 +37,8 @@ export default function Input({
             </option>
             {getCountries().map((country) => (
               <option key={country} value={country}>
+                +
+                {' '}
                 {getCountryCallingCode(country)}
               </option>
             ))}

@@ -1,11 +1,11 @@
 .card{
-    @apply bg-white text-left  rounded-xl  overflow-hidden border-x border-y border-green font-work-sans;
+    @apply bg-white text-left  rounded-xl  overflow-hidden border-x border-y border-green font-work-sans lg:h-[280px] lg:w-[483px] lg:mr-9;
     &__image{
-        @apply w-full h-[155px] relative bg-custom bg-cover bg-no-repeat;
+        @apply w-full h-[155px] relative bg-custom bg-cover bg-no-repeat lg:h-[145px];
     }
 
     &__title{
-        @apply font-bold mt-3 block;
+        @apply font-bold mt-3 block lg:mt-2 text-sm;
     }
 
     &__detail{

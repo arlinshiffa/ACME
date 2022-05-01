@@ -4,4 +4,8 @@
     &__logo{
         @apply mb-8;
     }
+
+    &__wrapper{
+        @apply lg:flex lg:items-center lg:justify-center container
+    }
 }

@@ -11,8 +11,10 @@ export default function Home() {
       <div className={styles.index__logo}>
         <Image src="/img/logo.svg" alt="logo" width={116.34} height={24} />
       </div>
-      <Card />
-      <Form />
+      <div className={styles.index__wrapper}>
+        <Card />
+        <Form />
+      </div>
     </div>
 
   );
