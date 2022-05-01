@@ -2,7 +2,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import styles from './form.module.scss';
-import Input from '../../elements/input/input';
 import Button from '../../elements/button/button';
 
 import 'react-phone-number-input/style.css';
